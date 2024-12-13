@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page - BTS Theme</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+            background-image: url('https://www.bighitmusic.com/data/file/album/2020/10/05/ee65e8f9a63d92a0bdbabf51a3f1e7e8.jpg'); /* BTS image */
+            background-size: cover;
+            background-position: center;
+        }
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent to show background */
+            padding: 2em;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        .login-container h1 {
+            margin-bottom: 1em;
+            font-size: 1.5em;
+            color: #7A5AA5; /* BTS purple */
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 1em;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5em;
+            color: #555;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 0.8em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+        .form-group input:focus {
+            border-color: #7A5AA5; /* BTS purple */
+            outline: none;
+        }
+        .login-button {
+            width: 100%;
+            padding: 0.8em;
+            background-color: #7A5AA5; /* BTS purple */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        .login-button:hover {
+            background-color: #6e4a8c; /* Slightly darker purple */
+        }
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 0.5em;
+        }
+        .bts-slogan {
+            margin-top: 1em;
+            text-align: center;
+            font-size: 1.1em;
+            color: #7A5AA5;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="login-button">Login</button>
+            <div id="errorMessage" class="error-message" style="display: none;">Invalid username or password.</div>
+        </form>
+        <div class="bts-slogan">ARMY, let's unite!</div> <!-- BTS slogan -->
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Example validation: hardcoded username and password
+            if (username === 'admin' && password === '12345') {
+                alert('Login successful!');
+            } else {
+                const errorMessage = document.getElementById('errorMessage');
+                errorMessage.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
